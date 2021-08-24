@@ -1,4 +1,4 @@
-package com.company;
+package com.company.module_7;
 
 public abstract class Animal {
     String name, habitat;
