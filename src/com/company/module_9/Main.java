@@ -4,7 +4,6 @@ import java.io.*;
 
 public class Main {
 
-
     public static void main(String[] args) throws IOException {
 
         FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\KatyPaty\\Desktop\\sources\\module-9\\out.txt");
@@ -41,6 +40,5 @@ public class Main {
         }
         file1.close();
         System.out.println();
-
     }
 }
