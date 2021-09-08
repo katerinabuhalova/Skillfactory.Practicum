@@ -3,7 +3,7 @@ package com.company.module_10;
 import java.util.Scanner;
 
 public class BookName {
-    
+    String phone;
     String books = "a,b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y,z";
 
     public void inputName() throws Exception {
