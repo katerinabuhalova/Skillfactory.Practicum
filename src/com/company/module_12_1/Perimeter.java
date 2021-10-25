@@ -3,7 +3,7 @@ package com.company.module_12_1;
 public class Perimeter extends Thread {
     private int a;
     private int b;
-    
+
     public Perimeter(int a, int b) {
         this.a = a;
         this.b = b;
@@ -17,7 +17,8 @@ public class Perimeter extends Thread {
     @Override
     public void run() {
         try {
-            Thread.sleep(1000);
+            double time = (Math.random() + 1) * 1000;
+            Thread.sleep((long)time);
             System.out.println("Perimeter rectangle : " + perimeterRectangle());
         } catch (InterruptedException e) {
               e.printStackTrace();
