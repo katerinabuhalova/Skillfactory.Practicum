@@ -2,8 +2,9 @@ package com.company.module_16;
 
 public class Hero extends Unit{
 
-    public Hero(String name, int health, int agile, int force) {
-        super(name, health, agile, force, 0, 0);
+
+    public Hero(int health, int agile, int force) {
+        super(health, agile, force, 0, 0);
     }
 
     @Override

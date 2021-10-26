@@ -8,9 +8,17 @@ public class Unit {
     private int force;
     protected int experience;
     protected int gold;
-    
+
     public Unit(String name, int health, int agile, int force, int experience, int gold) {
         this.name = name;
+        this.health = health;
+        this.agile = agile;
+        this.force = force;
+        this.experience = experience;
+        this.gold = gold;
+    }
+
+    public Unit(int health, int agile, int force, int experience, int gold) {
         this.health = health;
         this.agile = agile;
         this.force = force;
@@ -26,6 +34,10 @@ public class Unit {
         return gold;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void attack(Unit target) {
         target.damage(force);
     }
@@ -38,15 +50,13 @@ public class Unit {
         return health <= 0;
     }
 
+
     @Override
     public String toString() {
-        return "Unit{" +
-                "name='" + name + '\'' +
-                ", health=" + health +
-                ", agile=" + agile +
-                ", force=" + force +
-                ", experience=" + experience +
-                ", gold=" + gold +
-                '}';
+        return name + ": {health is " + health +
+                ", agile is " + agile +
+                ", force is " + force +
+                ", experience is " + experience +
+                ", gold is " + gold + "}";
     }
 }
