@@ -3,7 +3,7 @@ package com.company.module_16;
 import java.util.Scanner;
 
 public class Main {
-    final static Hero hero = new Hero(100, 50, 20);
+    final static Hero hero = new Hero(100, 20, 20);
 
     public static void main(String[] args) {
         startPlay();
@@ -18,7 +18,7 @@ public class Main {
     }
 
     public static void startCombat() {
-        Unit skeleton = new Unit("Skeleton", 70, 50, 15, 2, 10);
+        Unit skeleton = new Unit("Skeleton", 70, 15, 15, 2, 10);
         System.out.println("Start combat " + "\nYour opponent is " + skeleton);
         while (!hero.isDead() && !skeleton.isDead()) {
             hero.attack(skeleton);
@@ -27,6 +27,6 @@ public class Main {
 
         //result
         Unit winner = hero.isDead() ? skeleton : hero;
-        System.out.println("Winner is: " + winner);
+        System.out.println("Winner is " + winner);
     }
 }

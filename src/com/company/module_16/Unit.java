@@ -39,7 +39,14 @@ public class Unit {
     }
 
     public void attack(Unit target) {
-        target.damage(force);
+        if(agile *3 > (Math.random()*100)) {
+            target.damage(force);
+            System.out.println(this.name + " hit " + target.name + " to " + force);
+        } else {
+            target.damage(0);
+            System.out.println(this.name + " hit " + target.name + " and miss");
+        }
+
     }
 
     public void damage(int damage) {
