@@ -20,24 +20,7 @@ public class Main {
     public static void startCombat() {
         Unit skeleton = new Unit("Skeleton", 70, 15, 15, 2, 10);
         System.out.println("Start combat " + "\nYour opponent is " + skeleton);
-        while (!hero.isDead() && !skeleton.isDead()) {
-            hero.attack(skeleton);
-            skeleton.attack(hero);
-        }
-
-       if(hero.isDead()) {
-           System.out.println("You dead. Game over.\nPress any key to exit.");
-           try
-           {
-               System.in.read();
-           }
-           catch(Exception e)
-           {
-               e.printStackTrace();
-           }
-           System.exit(0);
-       } else {
-           System.out.println("Winner is " + hero);
-       }
+        Thread combat = new Combat(hero, skeleton);
+        combat.start();
     }
 }
