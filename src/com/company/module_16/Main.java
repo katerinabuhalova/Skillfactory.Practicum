@@ -3,7 +3,8 @@ package com.company.module_16;
 import java.util.Scanner;
 
 public class Main {
-    final static Hero hero = new Hero(100, 20, 20);
+    final static Hero hero = new Hero(10, 20, 20);
+    final static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         startPlay();
@@ -12,7 +13,6 @@ public class Main {
 
     public static void startPlay() {
         System.out.println("Hello my dear friends! Greets you Role Playing Game!\nCreate a hero and name him");
-        Scanner scanner = new Scanner(System.in);
         hero.setName(scanner.next());
         System.out.println("You hero name is " + hero);
     }
@@ -25,8 +25,19 @@ public class Main {
             skeleton.attack(hero);
         }
 
-        //result
-        Unit winner = hero.isDead() ? skeleton : hero;
-        System.out.println("Winner is " + winner);
+       if(hero.isDead()) {
+           System.out.println("You dead. Game over.\nPress any key to exit.");
+           try
+           {
+               System.in.read();
+           }
+           catch(Exception e)
+           {
+               e.printStackTrace();
+           }
+           System.exit(0);
+       } else {
+           System.out.println("Winner is " + hero);
+       }
     }
 }
