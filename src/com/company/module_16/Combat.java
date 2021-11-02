@@ -22,13 +22,7 @@ public class Combat extends Thread {
             e.printStackTrace();
         }
         if (hero.isDead()) {
-            System.out.println("You dead. Game over.\nPress any key to exit.");
-            try {
-                System.in.read();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            System.exit(0);
+            System.out.println("You dead!");
         } else {
             System.out.println("Winner is " + hero);
         }

@@ -2,7 +2,6 @@ package com.company.module_16;
 
 public class Unit {
     private String name;
-
     private int health;
     private int agile;
     private int force;
@@ -38,15 +37,22 @@ public class Unit {
         this.name = name;
     }
 
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
     public void attack(Unit target) {
-        if(agile *3 > (Math.random()*100)) {
+        if (agile * 3 > (Math.random() * 100)) {
             target.damage(force);
             System.out.println(this.name + " hit " + target.name + " to " + force);
         } else {
             target.damage(0);
             System.out.println(this.name + " hit " + target.name + " and miss");
         }
-
     }
 
     public void damage(int damage) {
@@ -56,7 +62,6 @@ public class Unit {
     public boolean isDead() {
         return health <= 0;
     }
-
 
     @Override
     public String toString() {
